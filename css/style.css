@@ -1,5 +1,6 @@
 :root {
     --primary-color: #e50914;
+    --dark-color: #141414;
 }
 
 * {
@@ -83,7 +84,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align center;
+    text-align: center;
     margin-top: 7rem;
     z-index: 2;
 }
@@ -102,6 +103,81 @@ img {
     font-size: 1.5rem;
     line-height: 1.25;
     margin: 0 0 2rem;
+}
+
+/* TABS */
+.tabs {
+    background: var(--dark-color);
+    padding-top: 0.7rem;
+    border-bottom: 3px solid #3d3d3d;
+}
+
+.tabs .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.7rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 70%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 1.6rem;
+}
+
+/* TEXT STYLES */
+.text-xl {
+    font-size: 1.7rem;
+    margin-bottom: 0.7rem;
+}
+
+.text-lg {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+text-center {
+    text-align: center;
+}
+
+.text-dark {
+    color: #999;
+}
+
+.tabs p {
+    font-size: 1rem;
+    padding-top: 0.3rem;
+}
+
+.tabs .container > div {
+    padding: 1.2rem 0;
+}
+
+.tabs .container > div:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.tab-border {
+    border-bottom: var(--primary-color) 5px solid;
+}
+
+/* TAB CONTENT */
+.tab-content {
+    padding: 3rem 0;
+    color: white;
+}
+
+#tab-1-content .tab1-content-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
 }
 
 /* My Buttons */
