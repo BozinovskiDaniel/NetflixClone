@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect, useRef} from 'react';
 import MovieRow from '../js/MovieRow';
 import $ from 'jquery';
+import {TweenMax, Linear} from 'gsap';
 
 class View extends Component {
     constructor(props) {
@@ -41,14 +42,13 @@ class View extends Component {
         this.performSearch(searchTerm);
     }
 
+
     render() {
         return (
             <div>
 
                 <input className="searchbar" placeholder="Enter search term" onChange={this.searchChangeHandler.bind(this)}></input>
                 {this.state.rows}
-
-
 
             </div>
         );
