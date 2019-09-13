@@ -11,3 +11,43 @@
 .posters {
     padding: 10px;
 }
+
+
+
+.main {
+    margin-left: 20vw; /* Same as the width of the sidebar */
+    margin-top: 8vh;
+    padding: 10px 10px;
+    font-family: Poppins;
+
+        .container-fluid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 15px;
+            padding-top: 15px;
+        }
+
+        .grid-item {
+            img {
+                border-radius: 5%;
+                cursor: pointer;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            .btn-sm {
+                
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .searchbar {
+            width: 100%;
+            padding: 10px;
+        }
+  }
+

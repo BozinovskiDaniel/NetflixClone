@@ -46,9 +46,44 @@ class View extends Component {
     render() {
         return (
             <div>
+                
+                <div className="sidenav">
+                    <div className="grid-item" />
+                    <div className="grid-item">
+                        <h1>Getflix Charts</h1>
+                        <a href="#">Most Popular Movies</a>
+                        <a href="#">Top Rated Movies</a>
+                        <a href="#">Most Popular TV</a>
+                        <a href="#">Top Rated TV</a>
+                    </div>
+                    <div className="grid-item">
+                        <h1>Top Rated TV Shows by Genre</h1>
+                        <a href="#">Action</a>
+                        <a href="#">Adventure</a>
+                        <a href="#">Animation</a>
+                        <a href="#">Biography</a>
+                        <a href="#">Comedy</a>
+                        <a href="#">Crime</a>
+                        <a href="#">Documentary</a>
+                        <a href="#">Drama</a>
+                        <a href="#">Family</a>
+                        <a href="#">Fantasy</a>
+                        <a href="#">Game-Show</a>
+                        <a href="#">History</a>
+                        <a href="#">Horror</a>
+                    </div>
+                </div>
 
-                <input className="searchbar" placeholder="Enter search term" onChange={this.searchChangeHandler.bind(this)}></input>
-                {this.state.rows}
+                
+                <div className="main">
+
+                <div className="container">
+                    <input className="searchbar" placeholder="Enter search term" onChange={this.searchChangeHandler.bind(this)}></input>
+                </div>
+                    <div className="container-fluid">
+                        {this.state.rows}
+                    </div>
+                </div>
 
             </div>
         );

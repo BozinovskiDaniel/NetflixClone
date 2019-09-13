@@ -6,28 +6,21 @@ class MovieRow extends Component {
         window.location.href = url;
     }
 
+    movieSelected() {
+        sessionStorage.setItem('movieId', this.props.movie.id);
+        console.log(this.props.movie.title);
+        
+    }
+    
     render() {
-        return <table key={this.props.movie.id}>
-        <tbody>
-            <tr>
-                <td width="20%">
-                    <img className="posters" src={this.props.movie.poster_src} width="250px" alt="poster" />
-                </td>
-                <td width="60%">
-                    <h3>{this.props.movie.title}</h3>
-                    <p>{this.props.movie.overview}</p>
-                    <input type="button" onClick={this.viewMovie.bind(this)} value="View" />
-                </td>
-                <td width="10%">
-                    <p>Rating: {this.props.movie.vote_average}</p>
-                </td>
-                <td width="10%">
-                    <p>Release Date: {this.props.movie.release_date}</p>
-                </td>
+        return    <div className="grid-item">
+            <div className="text-center">
+                <img className="posters" src={this.props.movie.poster_src} width="150px" alt="poster" onClick={this.viewMovie.bind(this)} />
+                <h3>{this.props.movie.title}{this.props.movie.name}</h3>
+                <input type="button" className="btn-sm btn-secondary bg-dark" onClick={this.movieSelected.bind(this)} value="Movie Details" />
+            </div>
+        </div>
 
-            </tr>
-        </tbody>
-    </table>
     }
 
 }
