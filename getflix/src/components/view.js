@@ -27,7 +27,7 @@ class View extends Component {
                 var movieRows = [];
 
                 results.forEach((movie) => {
-                    if (movie.title) {
+                    if (movie.title && movie.poster_path) {
                         movie.poster_src = "https://image.tmdb.org/t/p/w500/" + movie.poster_path;
                         const movieRow = <MovieRow key={movie.id} movie={movie} />
                         movieRows.push(movieRow);
@@ -52,7 +52,7 @@ class View extends Component {
 
     nextpage = () => {
         
-        if (this.state.movie && this.state.page_num < this.state.total_pages ) {
+        if (this.state.movie) {
             this.setState({
                 page_num: this.state.page_num += 1
             })
