@@ -5,13 +5,18 @@ import $ from 'jquery';
 class View extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {page_num: 1,
+        total_pages: null,
+        given: "it",
+        movie: []};
+
         this.performSearch("it");
     }
 
     performSearch(searchTerm) {
 
-        const urlStr = "https://api.themoviedb.org/3/search/multi?api_key=d31bf19d99f4cca10b2a1aa31b7abeaf&language=en-US&query=" + searchTerm;
+        const urlStr = "https://api.themoviedb.org/3/search/multi?api_key=d31bf19d99f4cca10b2a1aa31b7abeaf&language=en-US&query=" + searchTerm + "&page=" + this.state.page_num;
+        console.log(urlStr);
         $.ajax({
             url: urlStr,
             success: (searchResults) => {
@@ -41,7 +46,34 @@ class View extends Component {
     searchChangeHandler(event) {
         console.log(event.target.value);
         const searchTerm = event.target.value;
+        this.state.given = searchTerm;
         this.performSearch(searchTerm);
+    }
+
+    nextpage = () => {
+        
+        if (this.state.movie && this.state.page_num < this.state.total_pages ) {
+            this.setState({
+                page_num: this.state.page_num += 1
+            })
+            
+            let searchTerm = this.state.given;
+            this.performSearch(searchTerm)
+        }
+
+    }
+
+    previouspage = () => {
+
+        if (this.state.movie && this.state.page_num != 1) {
+            this.setState({
+                page_num: this.state.page_num -= 1
+            })
+
+            let searchTerm = this.state.given;
+            this.performSearch(searchTerm)
+        }
+
     }
 
 
@@ -88,6 +120,15 @@ class View extends Component {
                 </div>
                     <div className="container-fluid">
                         {this.state.rows}
+                    </div>
+
+                    <div className="buttons">
+                        <div className="butt1">
+                            <input type="button" className="btn-lg btn-secondary bg-dark" onClick={this.previouspage} value="Previous Page" />
+                        </div>
+                        <div className="butt2">
+                            <input type="button" className="btn-lg btn-secondary bg-dark" onClick={this.nextpage} value="Next Page" />
+                        </div>
                     </div>
                 </div>
 

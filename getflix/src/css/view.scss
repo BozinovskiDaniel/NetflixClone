@@ -49,5 +49,32 @@
             width: 100%;
             padding: 10px;
         }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+
+            
+        }
+        .butt1 {
+            padding-top: 15px;
+            padding-right: 15px;
+
+            &:hover {
+                cursor: pointer;
+                color: #eee;
+            }
+           
+        }
+
+        .butt2 {
+            padding-top: 15px;
+            
+            &:hover {
+                cursor: pointer;
+            }
+        }
   }
 
