@@ -1,7 +1,6 @@
 import React, {Component, useEffect, useRef} from 'react';
 import MovieRow from '../js/MovieRow';
 import $ from 'jquery';
-import {TweenMax, Linear} from 'gsap';
 
 class View extends Component {
     constructor(props) {
@@ -36,6 +35,7 @@ class View extends Component {
         })
     }
 
+
     searchChangeHandler(event) {
         console.log(event.target.value);
         const searchTerm = event.target.value;
@@ -46,7 +46,11 @@ class View extends Component {
     render() {
         return (
             <div>
-                
+
+                <div className="Nav">
+                    <h1>Getflix | Movie & TV Search</h1>
+                </div>
+
                 <div className="sidenav">
                     <div className="grid-item" />
                     <div className="grid-item">
