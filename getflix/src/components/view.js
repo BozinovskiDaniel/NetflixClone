@@ -22,9 +22,11 @@ class View extends Component {
                 var movieRows = [];
 
                 results.forEach((movie) => {
-                    movie.poster_src = "https://image.tmdb.org/t/p/w500/" + movie.poster_path;
-                    const movieRow = <MovieRow key={movie.id} movie={movie} />
-                    movieRows.push(movieRow);
+                    if (movie.title) {
+                        movie.poster_src = "https://image.tmdb.org/t/p/w500/" + movie.poster_path;
+                        const movieRow = <MovieRow key={movie.id} movie={movie} />
+                        movieRows.push(movieRow);
+                    }
                 })
                 
                 this.setState({rows: movieRows});
