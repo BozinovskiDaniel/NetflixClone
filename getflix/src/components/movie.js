@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
+import getData from '../js/getData';
 
 class Movie extends Component {
     constructor(props) {
@@ -16,8 +17,9 @@ class Movie extends Component {
             url: urlStr,
             success: (res) => {
                 console.log("fetched data success");
-                console.log(res);
                 
+                const movierows = res;
+                     
             },
             error: (xhr, status, err) => {
                 console.log("failed");
