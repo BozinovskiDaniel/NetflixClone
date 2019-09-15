@@ -7,17 +7,17 @@ function landing() {
     return( <div>
         <header className="showcase">
 			<div className="showcase-top">
-                <img src={require('../img/logo.png')} width="500px" />
+                <img src={require('../img/logo.png')} width="500px" alt="bg" />
                 <Link to="/View">
-				    <a href="#" className="btn btn-rounded">Sign In</a>
+				    <button className="btn btn-rounded">Sign In</button>
                 </Link>
 			</div>
 			<div className="showcase-content">
 				<h1>See what's next</h1>
-				<p>Watch anywhere. Cancel Anytime</p>
+				<p>View anywhere. Cancel Anytime</p>
 
                 <Link to="/View">
-				    <a className="btn btn-xl">Watch Free For 30 Days <i className="fas fa-chevron-right btn-icon"></i></a>
+				    <button className="btn btn-xl">View Free For 30 Days <i className="fas fa-chevron-right btn-icon"></i></button>
                 </Link>
             </div>
 		</header>

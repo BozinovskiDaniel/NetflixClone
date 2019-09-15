@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
 class Movie extends Component {
@@ -39,38 +38,58 @@ class Movie extends Component {
 
         return ( <div className="moviepage">
         
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-4">
-                        <img className="posters" src={this.state.movie.poster_src} width="250px" alt="poster"  />
-                    </div>
-                    <div className="col-md-8">
-                        <div className="movietitle">
-                            <h1>{this.state.movie.title}</h1>
-                        </div>
-                        <div className="moviecontent">
-                            <ul className="desc">
-                                <li className="item">Budget: {this.state.movie.budget}</li>
-                                <li className="item">Release-date: {this.state.movie.release_date}</li>
-                                <li className="item">Runtime: {this.state.movie.runtime}</li>
-                                <li className="item">Average-vote: {this.state.movie.vote_average}</li>
-                                <li className="item">Total-votes: {this.state.movie.vote_count}</li>
-                                <li className="item">Status: {this.state.movie.status}</li>
-                                <li className="item">Revenue: {this.state.movie.revenue}</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <h1>Overview</h1>
-                    <p>{this.state.movie.overview}</p>
-                    <input type="button" className="btn-sm btn-secondary bg-dark"  value="Movie Details" />
-                    <Link to="/view">
-                        <input type="button" className="btn-sm btn-secondary bg-dark"  value="Go Back" />
-                    </Link>
-                </div>
+                <div className="grid-item"></div>
+                <div className="grid-item"></div>
+                <div className="grid-item"></div>
+                <div className="grid-item"></div>
+                <div className="grid-item active">
 
-            </div>
+                        <div className="row thelogo">
+                            <div className="btns">
+                                <input type="button" className="btn-sm btn-secondary bg-dark"  value="Movie Details" />
+                                <Link to="/view">
+                                    <input type="button" className="btn-sm btn-secondary bg-dark"  value="Go Back" />
+                                </Link>
+                            </div>
+                            <Link to="/"><img src={require('../img/logo.png')} height="80px" /></Link>
+                        </div>
+
+                        <div className="row">
+                            <div className="col-md-3 poster">
+                                <img className="posters" src={this.state.movie.poster_src} width="100px" alt="poster"  />
+                            </div>
+
+                            <div className="col-md-9">
+                                <div className="movietitle">
+                                    <h1>{this.state.movie.title}</h1>
+                                </div>
+
+                                <div className="moviecontent">
+                                    <ul className="desc">
+                                        <li className="item"><h4>Budget:  </h4>${this.state.movie.budget}</li>
+                                        <li className="item"><h4>Release-date:  </h4>{this.state.movie.release_date}</li>
+                                        <li className="item"><h4>Runtime:  </h4>{this.state.movie.runtime} minutes</li>
+                                        <li className="item"><h4>Average-vote:  </h4>{this.state.movie.vote_average}</li>
+                                        <li className="item"><h4>Total-votes:  </h4>{this.state.movie.vote_count}</li>
+                                        <li className="item"><h4>Status:  </h4>{this.state.movie.status}</li>
+                                        <li className="item"><h4>Revenue:  </h4>${this.state.movie.revenue}</li>
+                                    </ul>
+                                </div>
+                                </div>
+                        </div>
+                        <div className="row">
+                            <h1>Overview</h1>
+                            <p>{this.state.movie.overview}</p>
+
+                        </div>
+
+                </div>
+                <div className="grid-item"></div>
+                <div className="grid-item"></div>
+                <div className="grid-item"></div>
+                <div className="grid-item"></div>
+            
+
 
         </div>
         );

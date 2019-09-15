@@ -1,31 +1,86 @@
+$base-color: #D2222E;
+
 .moviepage {
-    background-color: #000;
+    background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover;
     width: 100%;
     height: 100vh;
-
-    .container {
+    display: grid;
+    grid-template-rows: 5% 1fr 5%;
+    grid-template-columns: 10% 1fr 10%;
+    
+    .active {
+        background-color: #222;
+        border-radius: 20px;
+        height: 100%;
+        width: 100%;
         font-family: Poppins;
         background-color: #222;
-        width: 60%;
-        height: 100%;
         color: #eee;
         overflow: hidden;
-    
-        p {
-            padding: 15px;
+            
+        .poster {
+            padding-left: 30px;
         }
-    
-        h1 {
-            padding: 15px;
+
+        .btns {
+            padding-left: 40px;
+            padding-right: 70px;
         }
+
+            img {
+                border-radius: 10%;
+            }
+    
+            p {
+               line-height: 1.5;
+               font-size: 15px;
+               padding-left: 30px;
+            }
         
-        li {
-            text-decoration: none;
-        }
-    
-        ul {
-            text-decoration: none;
-            list-style: none;
+            h1 {
+                padding-top: 10px;
+                padding-left: 30px;
+                color: $base-color;
+            }
+            
+            li {
+                text-decoration: none;
+            }
+        
+            ul {
+                text-decoration: none;
+                list-style: none;
+            }
+        
+    }
+
+
+    .movietitle {
+        padding-bottom: 30px;
+    }
+
+    .thelogo {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 10px 0px;
+    }
+
+    .item {
+        padding: 3px;
+    }
+
+    h4 {
+        display: inline;
+        font-size: 18px;
+        font-weight: 600;
+        color: #eee;
+        padding-left: 30px;
+    }
+
+    .btn {
+        &:hover {
+            cursor: pointer;
         }
     }
 }

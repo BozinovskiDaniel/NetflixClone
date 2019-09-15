@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import MovieRow from '../js/MovieRow';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 class View extends Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class View extends Component {
         this.state = {page_num: 1,
         total_pages: null,
         given: "it",
+        genre: "",
         movie: []};
 
         this.performSearch("it");
@@ -50,6 +52,12 @@ class View extends Component {
         this.performSearch(searchTerm);
     }
 
+    showgenre = (event) => {
+        let genre = event.target.getAttribute('data');
+
+        const urlStr = "";
+    }
+
     nextpage = () => {
         
         if (this.state.movie) {
@@ -82,13 +90,14 @@ class View extends Component {
             <div>
 
                 <div className="Nav">
-                    <h1>Getflix | Movie & TV Search</h1>
+                    
+                    <h1>Movie & TV Search</h1>
                 </div>
 
                 <div className="sidenav">
-                    <div className="grid-item" />
+                    <div className="logo grid-item"><Link to="/"><img src={require('../img/logo.png')} height="60px" /></Link></div>
                     <div className="grid-item">
-                        <h1>Getflix Charts</h1>
+                        <h1>Charts</h1>
                         <a href="#">Most Popular Movies</a>
                         <a href="#">Top Rated Movies</a>
                         <a href="#">Most Popular TV</a>
@@ -96,7 +105,7 @@ class View extends Component {
                     </div>
                     <div className="grid-item">
                         <h1>Top Rated TV Shows by Genre</h1>
-                        <a href="#">Action</a>
+                        <a href="#" onClick={this.showgenre} data="Action">Action</a>
                         <a href="#">Adventure</a>
                         <a href="#">Animation</a>
                         <a href="#">Biography</a>
@@ -115,7 +124,7 @@ class View extends Component {
                 
                 <div className="main">
 
-                <div className="container">
+                <div className="search">
                     <input className="searchbar" placeholder="Enter search term" onChange={this.searchChangeHandler.bind(this)}></input>
                 </div>
                     <div className="container-fluid">
