@@ -52,6 +52,27 @@ class View extends Component {
         this.performSearch(searchTerm);
     }
 
+    showupcoming = () => {
+        
+        const urlStr = "https://api.themoviedb.org/3/movie/upcoming?api_key=d31bf19d99f4cca10b2a1aa31b7abeaf&language=en-US%page=" + this.state.page_num;
+
+        console.log(urlStr);
+        $.ajax({
+            url: urlStr,
+            success: (searchResults) => {
+                console.log("fetched data success");
+                const results = searchResults.results;
+                console.log(results);
+                
+                this.setState({rows: results})
+            },
+            error: (xhr, status, err) => {
+                console.log("failed");
+            }
+        })
+    }
+
+
     showgenre = (event) => {
         let genre = event.target.getAttribute('data');
 
@@ -102,6 +123,7 @@ class View extends Component {
                         <a href="#">Top Rated Movies</a>
                         <a href="#">Most Popular TV</a>
                         <a href="#">Top Rated TV</a>
+                        <a href="#" onClick={this.showupcoming}>Upcoming Movies</a>
                     </div>
                     <div className="grid-item">
                         <h1>Top Rated TV Shows by Genre</h1>
