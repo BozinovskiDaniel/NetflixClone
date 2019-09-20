@@ -1,19 +1,46 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import '../js/scripts';
-
 class landing extends Component {
 	
 
 
 	render() {
 		return( <div>
+
+			<nav className="menu-wrap menu-back cbp-af-header">
+					<div className="menu">
+						<a href="index.html" >
+							<div className="logo">
+								<img src={require('../img/logo.png')} alt="bg" />
+							</div>
+						</a>
+						<ul>
+							<li>
+									<Link to="/view"><a className="curent-page" href="#" >films</a></Link>
+							</li>
+							<li>
+								<Link to="/view"><a href="#" >getflix-lovers</a></Link>
+								<ul>
+									<li><a href="rooms.html">film-lover</a></li>
+									<li><a href="rooms-gallery.html">Room Gallery</a></li>
+								</ul>
+							</li>
+							<li>
+								<Link to="/view"><a href="#" >reviews</a></Link>
+								<ul>
+									<li><a href="search.html">Search</a></li>
+									<li><a href="services.html">Services</a></li>
+									<li><a href="restaurant.html">Restaurant</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+		
 			<header className="showcase">
 				<div className="showcase-top">
-					<img src={require('../img/logo.png')} width="500px" alt="bg" />
 					<Link to="/View">
-						<button className="btn btn-rounded">Log In</button>
-						<button className="btn btn-rounded">Sign Up</button>
 					</Link>
 				</div>
 				<div className="showcase-content">
@@ -21,8 +48,12 @@ class landing extends Component {
 					<p>View anywhere. Cancel Anytime</p>
 
 					<Link to="/View">
-						<button className="btn btn-xl">View Free For 30 Days <i className="fas fa-chevron-right btn-icon"></i></button>
+						<button className="btn btn-xl btn-rounded">Start Discovering<i className="fas fa-chevron-right btn-icon"></i></button>
 					</Link>
+					
+					<h4>OR</h4>
+					
+					<input className="frontsearch" type="text" placeholder="SEARCH THE GETFLIX LIBRARY" />
 				</div>
 			</header>
 

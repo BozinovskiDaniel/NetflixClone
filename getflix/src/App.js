@@ -10,9 +10,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route path="/" exact component={Landing} />
-          <Route path="/view" component={View} />
-          <Route path="/movie" component={Movie} />
+          <Switch>
+            <Route path="/" exact component={Landing} />
+            <Route path="/view" component={View} />
+            <Route path="/movie" component={Movie} />
+          </Switch>
         </div>
       </Router>
     );
