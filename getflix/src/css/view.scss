@@ -45,7 +45,11 @@
             padding-bottom: 20px;
             img {
                 border-radius: 10%;
-                cursor: pointer;
+
+                &:hover {
+                    cursor: pointer;
+                    opacity: 0.55;
+                }
             }
 
             h3 {
