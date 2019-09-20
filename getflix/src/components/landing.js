@@ -6,7 +6,7 @@ class landing extends Component {
 
 
 	render() {
-		return( <div>
+		return( <div className="landing">
 
 			<nav className="menu-wrap menu-back cbp-af-header">
 					<div className="menu">
@@ -17,17 +17,17 @@ class landing extends Component {
 						</a>
 						<ul>
 							<li>
-									<Link to="/view"><a className="curent-page" href="#" >films</a></Link>
+									<a className="curent-page" href="#" >films</a>
 							</li>
 							<li>
-								<Link to="/view"><a href="#" >getflix-lovers</a></Link>
+								<a href="#" >getflix-lovers</a>
 								<ul>
 									<li><a href="rooms.html">film-lover</a></li>
 									<li><a href="rooms-gallery.html">Room Gallery</a></li>
 								</ul>
 							</li>
 							<li>
-								<Link to="/view"><a href="#" >reviews</a></Link>
+								<a href="#" >reviews</a>
 								<ul>
 									<li><a href="search.html">Search</a></li>
 									<li><a href="services.html">Services</a></li>
@@ -40,16 +40,16 @@ class landing extends Component {
 		
 			<header className="showcase">
 				<div className="showcase-top">
-					<Link to="/View">
-					</Link>
+					
+					
 				</div>
 				<div className="showcase-content">
 					<h1>See what's next</h1>
 					<p>View anywhere. Cancel Anytime</p>
 
-					<Link to="/View">
-						<button className="btn btn-xl btn-rounded">Start Discovering<i className="fas fa-chevron-right btn-icon"></i></button>
-					</Link>
+					
+						<Link to="/View"><button className="btn btn-xl btn-rounded">Start Discovering<i className="fas fa-chevron-right btn-icon"></i></button></Link>
+					
 					
 					<h4>OR</h4>
 					
@@ -84,9 +84,9 @@ class landing extends Component {
 									If you decide Getflix isn't for you - no problem. No commitment.
 									Cancel online anytime.
 								</p>
-								<Link to="/View">
+
 									<a href="#" className="btn btn-lg">Watch Free For 30 Days</a>
-								</Link>
+								
 							</div>
 							<img src="https://i.ibb.co/J2xDJV7/tab-content-1.png" alt="" />
 						</div>

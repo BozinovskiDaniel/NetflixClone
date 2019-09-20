@@ -13,7 +13,6 @@ class View extends Component {
         genre: "",
         movie: []};
 
-        this.performSearch("it");
     }
 
     rendermovies(results) {
@@ -190,50 +189,76 @@ class View extends Component {
 
     }
 
+    componentDidMount() {
+        this.popularmovies();
+    }
 
     render() {
         return (
             <div>
-
-                <div className="Nav">
-                    
-                    <h1>Movie & TV Search</h1>
-                </div>
-
-                <div className="sidenav">
-                    <div className="logo grid-item"><Link to="/"><img src={require('../img/logo.png')} height="60px" /></Link></div>
-                    <div className="grid-item">
-                        <h1>Charts</h1>
-                        <a href="#" onClick={this.popularmovies}>Most Popular Movies</a>
-                        <a href="#" onClick={this.topratedmovies}>Top Rated Movies</a>
-                        <a href="#" onClick={this.popularshows}>Most Popular TV</a>
-                        <a href="#" onClick={this.topratedshows}>Top Rated TV</a>
-                        <a href="#" onClick={this.showupcoming}>Upcoming Movies</a>
+                <nav className="navbar sticky-top navbar-expand-lg navbar-dark">
+                    <img src={require('../img/logo.png')} height="45px" alt="bg" />
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarText">
+                        <ul className="navbar-nav ml-auto">
+                            <li className="nav-item active">
+                                <a className="nav-link" href="#"><i className="fas fa-film btn-icon"></i>Films<span className="sr-only">(current)</span><i className="fas fa-angle-down btn-icon"></i></a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Getflix Lovers</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Reviews</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Sign In</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div className="grid-item">
-                        <h1>Top Rated TV Shows by Genre</h1>
-                        <a href="#" onClick={this.showgenre} data="28">Action</a>
-                        <a href="#" onClick={this.showgenre} data="12">Adventure</a>
-                        <a href="#" onClick={this.showgenre} data="16">Animation</a>
-                        <a href="#" onClick={this.showgenre} data="35">Comedy</a>
-                        <a href="#" onClick={this.showgenre} data="80">Crime</a>
-                        <a href="#" onClick={this.showgenre} data="99">Documentary</a>
-                        <a href="#" onClick={this.showgenre} data="18">Drama</a>
-                        <a href="#" onClick={this.showgenre} data="10751">Family</a>
-                        <a href="#" onClick={this.showgenre} data="14">Fantasy</a>
-                        <a href="#" onClick={this.showgenre} data="36">History</a>
-                        <a href="#" onClick={this.showgenre} data="27">Horror</a>
-                        <a href="#" onClick={this.showgenre} data="10749">Romance</a>
-                        <a href="#" onClick={this.showgenre} data="53">Thriller</a>
-                    </div>
-                </div>
-
+                </nav>
                 
                 <div className="main">
+                    <div className="header-content">
+                        <div className="row">
+                            <div className="col-12 title">
+                                <h5>FILMS</h5>
+                                <h6>Browse the film library to discover something new</h6>
+                                <hr />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-8">
+                                <button className="btn btn-outline-danger">Release Dates</button>
+                                <button className="btn btn-outline-danger">Genres</button>
+                                <button className="btn btn-outline-danger">Locations</button>
+                            </div>
+                            <div className="col-3"></div>
+                            <div className="col-1">
+                                <button type="button" class="btn btn-outline-secondary">Sort</button>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-12">
+                                <p>Displaying 1 to 24 out of 288283</p>
+                            </div>
+                        </div>
+                        <div className="row last">
+                            <div className="col-3 fontines">
+                                <i className="fas fa-angle-double-left btn-icon"></i>
+                                <i className="fas fa-angle-left btn-icon"></i>
+                            </div>
+                            <div className="col-8 text-center">
+                                <input className="searchbar" placeholder="Enter search term" onChange={this.searchChangeHandler.bind(this)}></input>
+                            </div>
+                            <div className="col-1 fonties">
+                                <i className="fas fa-angle-right btn-icon"></i>
+                                <i className="fas fa-angle-double-right btn-icon"></i>
+                            </div>
+                        </div>
+                    </div>
 
-                <div className="search">
-                    <input className="searchbar" placeholder="Enter search term" onChange={this.searchChangeHandler.bind(this)}></input>
-                </div>
                     <div className="container-fluid">
                         {this.state.rows}
                     </div>
