@@ -195,9 +195,9 @@ class View extends Component {
 
     render() {
         return (
-            <div>
+            <div className="allmovies">
                 <nav className="navbar sticky-top navbar-expand-lg navbar-dark">
-                    <img src={require('../img/logo.png')} height="45px" alt="bg" />
+                    <Link to="/"><img src={require('../img/logo.png')} height="45px" alt="bg" /></Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -230,9 +230,9 @@ class View extends Component {
                         </div>
                         <div className="row">
                             <div className="col-8">
-                                <button className="btn btn-outline-danger">Release Dates</button>
-                                <button className="btn btn-outline-danger">Genres</button>
-                                <button className="btn btn-outline-danger">Locations</button>
+                                <button className="btn-sm btn-outline-danger mr-1">Release Dates</button>
+                                <button className="btn-sm btn-outline-danger mr-1">Genres</button>
+                                <button className="btn-sm btn-outline-danger mr-1">Locations</button>
                             </div>
                             <div className="col-3"></div>
                             <div className="col-1">
@@ -272,6 +272,38 @@ class View extends Component {
                         </div>
                     </div>
                 </div>
+                
+                <footer className="footer">
+				<p>Questions? Call 1-866-579-7172</p>
+				<div className="footer-cols">
+					<ul>
+						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Investor Relations</a></li>
+						<li><a href="#">Ways To Watch</a></li>
+						<li><a href="#">Corporate Information</a></li>
+						<li><a href="#">Getflix Originals</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Help Center</a></li>
+						<li><a href="#">Jobs</a></li>
+						<li><a href="#">Terms Of Use</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Account</a></li>
+						<li><a href="#">Redeem Gift Cards</a></li>
+						<li><a href="#">Privacy</a></li>
+						<li><a href="#">Speed Test</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Media Center</a></li>
+						<li><a href="#">Buy Gift Cards</a></li>
+						<li><a href="#">Cookie Preferences</a></li>
+						<li><a href="#">Legal Notices</a></li>
+					</ul>
+				</div>
+
+			</footer>
 
             </div>
         );

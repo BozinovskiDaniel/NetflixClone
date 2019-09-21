@@ -7,36 +7,29 @@ class landing extends Component {
 
 	render() {
 		return( <div className="landing">
-
-			<nav className="menu-wrap menu-back cbp-af-header">
-					<div className="menu">
-						<a href="index.html" >
-							<div className="logo">
-								<img src={require('../img/logo.png')} alt="bg" />
-							</div>
-						</a>
-						<ul>
-							<li>
-									<a className="curent-page" href="#" >films</a>
-							</li>
-							<li>
-								<a href="#" >getflix-lovers</a>
-								<ul>
-									<li><a href="rooms.html">film-lover</a></li>
-									<li><a href="rooms-gallery.html">Room Gallery</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" >reviews</a>
-								<ul>
-									<li><a href="search.html">Search</a></li>
-									<li><a href="services.html">Services</a></li>
-									<li><a href="restaurant.html">Restaurant</a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</nav>
+			
+			<nav className="navbar navbar-expand-lg navbar-dark fixed-top">
+                    <Link to="/"><img src={require('../img/logo.png')} height="75px" alt="bg" /></Link>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarText">
+                        <ul className="navbar-nav ml-auto">
+                            <li className="nav-item active">
+                                <a className="nav-link" href="#"><i className="fas fa-film btn-icon"></i>Films<span className="sr-only">(current)</span><i className="fas fa-angle-down btn-icon"></i></a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Getflix Lovers</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Reviews</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Sign In</a>
+                            </li>
+                        </ul>
+				</div>
+			</nav>
 		
 			<header className="showcase">
 				<div className="showcase-top">
@@ -49,11 +42,6 @@ class landing extends Component {
 
 					
 						<Link to="/View"><button className="btn btn-xl btn-rounded">Start Discovering<i className="fas fa-chevron-right btn-icon"></i></button></Link>
-					
-					
-					<h4>OR</h4>
-					
-					<input className="frontsearch" type="text" placeholder="SEARCH THE GETFLIX LIBRARY" />
 				</div>
 			</header>
 
