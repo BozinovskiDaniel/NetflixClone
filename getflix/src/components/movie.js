@@ -51,7 +51,7 @@ class Movie extends Component {
                                     <input type="button" className="btn-sm btn-secondary bg-dark"  value="Go Back" />
                                 </Link>
                             </div>
-                            <Link to="/"><img src={require('../img/logo.png')} height="80px" /></Link>
+                            <Link to="/"><img src={require('../img/logo.png')} height="80px" alt="bg" /></Link>
                         </div>
 
                         <div className="row">

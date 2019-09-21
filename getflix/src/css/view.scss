@@ -62,7 +62,7 @@
 
     .main {
         font-family: Poppins;
-        background-color: #ddd; 
+        background-color: #eee; 
 
             .header-content {
                 width: 100%;
@@ -109,7 +109,7 @@
                 .fas {
                     padding: 11px 11px;
                     color: #666;
-
+                    display: inline;
                     &:hover {
                         cursor: pointer;
                     }
@@ -125,13 +125,15 @@
                 display: grid;
                 grid-template-columns: repeat(6, 1fr);
                 grid-gap: 30px;
-                padding-top: 140px;
+                padding-top: 120px;
                 padding-left: 70px;
                 padding-right: 70px;
+                padding-bottom: 75px;
             }
 
             .grid-item {
-                padding-bottom: 20px;
+                padding-bottom: 10px;
+                position: relative;
                 img {
                     width: 100%;
                     height: 100%;

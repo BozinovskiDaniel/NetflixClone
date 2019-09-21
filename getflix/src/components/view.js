@@ -9,7 +9,7 @@ class View extends Component {
         super(props);
         this.state = {page_num: 1,
         total_pages: null,
-        given: "",
+        given: "it",
         genre: "",
         movie: []};
 
@@ -20,13 +20,13 @@ class View extends Component {
 
         results.forEach((movie) => {
             if (movie.title && movie.poster_path) {
-                movie.poster_src = "https://image.tmdb.org/t/p/w500/" + movie.poster_path;
+                movie.poster_src = "https://image.tmdb.org/t/p/w400/" + movie.poster_path;
                 const movieRow = <MovieRow key={movie.id} movie={movie} />
                 movieRows.push(movieRow);
             }
 
             else if (movie.name && movie.poster_path) {
-                movie.poster_src = "https://image.tmdb.org/t/p/w500/" + movie.poster_path;
+                movie.poster_src = "https://image.tmdb.org/t/p/w400/" + movie.poster_path;
                 const movieRow = <TvRow key={movie.id} movie={movie} />
                 movieRows.push(movieRow);
             }
@@ -57,7 +57,7 @@ class View extends Component {
     searchChangeHandler(event) {
         console.log(event.target.value);
         const searchTerm = event.target.value;
-        this.state.given = searchTerm;
+        this.setState({given: searchTerm});
         this.performSearch(searchTerm);
     }
 
@@ -236,7 +236,7 @@ class View extends Component {
                             </div>
                             <div className="col-3"></div>
                             <div className="col-1">
-                                <button type="button" class="btn btn-outline-secondary">Sort</button>
+                                <button type="button" className="btn btn-outline-secondary">Sort</button>
                             </div>
                         </div>
                         <div className="row">
@@ -247,13 +247,13 @@ class View extends Component {
                         <div className="row last">
                             <div className="col-3 fontines">
                                 <i className="fas fa-angle-double-left btn-icon"></i>
-                                <i className="fas fa-angle-left btn-icon"></i>
+                                <div onClick={this.previouspage}><i className="fas fa-angle-left btn-icon"></i></div>
                             </div>
                             <div className="col-8 text-center">
                                 <input className="searchbar" placeholder="Enter search term" onChange={this.searchChangeHandler.bind(this)}></input>
                             </div>
                             <div className="col-1 fonties">
-                                <i className="fas fa-angle-right btn-icon"></i>
+                                <div onClick={this.nextpage}><i className="fas fa-angle-right btn-icon"></i></div>
                                 <i className="fas fa-angle-double-right btn-icon"></i>
                             </div>
                         </div>
@@ -263,14 +263,6 @@ class View extends Component {
                         {this.state.rows}
                     </div>
 
-                    <div className="buttons">
-                        <div className="butt1">
-                            <input type="button" className="btn-lg btn-secondary bg-dark" onClick={this.previouspage} value="Previous Page" />
-                        </div>
-                        <div className="butt2">
-                            <input type="button" className="btn-lg btn-secondary bg-dark" onClick={this.nextpage} value="Next Page" />
-                        </div>
-                    </div>
                 </div>
                 
                 <footer className="footer">

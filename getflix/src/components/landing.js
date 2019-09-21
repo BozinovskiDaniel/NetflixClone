@@ -76,7 +76,7 @@ class landing extends Component {
 									<a href="#" className="btn btn-lg">Watch Free For 30 Days</a>
 								
 							</div>
-							<img src="https://i.ibb.co/J2xDJV7/tab-content-1.png" alt="" />
+							<img src="https://i.ibb.co/J2xDJV7/tab-content-1.png" alt="bg" />
 						</div>
 					</div>
 
@@ -91,7 +91,7 @@ class landing extends Component {
 						</div>
 						<div className="tab-2-content-bottom">
 							<div>
-								<img src="https://i.ibb.co/DpdN7Gn/tab-content-2-1.png" alt="" />
+								<img src="https://i.ibb.co/DpdN7Gn/tab-content-2-1.png" alt="bg" />
 								<p className="text-md">
 									Watch on your TV
 								</p>
@@ -101,7 +101,7 @@ class landing extends Component {
 								</p>
 							</div>
 							<div>
-								<img src="https://i.ibb.co/R3r1SPX/tab-content-2-2.png" alt="" />
+								<img src="https://i.ibb.co/R3r1SPX/tab-content-2-2.png" alt="bg" />
 								<p className="text-md">
 									Watch instantly or download for later
 								</p>
@@ -110,7 +110,7 @@ class landing extends Component {
 								</p>
 							</div>
 							<div>
-								<img src="https://i.ibb.co/gDhnwWn/tab-content-2-3.png" alt="" />
+								<img src="https://i.ibb.co/gDhnwWn/tab-content-2-3.png" alt="bg" />
 								<p className="text-md">
 									Use any computer
 								</p>
