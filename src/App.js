@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './App.scss';
 import View from './components/view';
 import Landing from './components/landing';
 import Movie from './components/movie';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './App.scss';
 
 class App extends Component {
   render() {

@@ -50,7 +50,12 @@ function Movie() {
 
                     <div className="row">
                         <div className="col-md-3 poster">
-                            <img className="posters" src={movie.poster_src} width="100px" alt="poster"  />
+                            <div className="overlay">
+                                <img className="posters" src={movie.poster_src} width="100px" alt="poster"  />
+                                <div className="middle">
+                                    <div className="text">John Doe</div>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="col-md-9">
